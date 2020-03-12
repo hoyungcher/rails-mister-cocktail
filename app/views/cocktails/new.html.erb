@@ -1,0 +1,8 @@
+<h1>Share your creation!</h1>
+<%= simple_form_for @cocktail do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description, as: :text%>
+  <%= f.input :colour, collection: [ "orange", "yellow", "green", "red", "blue"] %>
+  <%= f.input :image_url %>
+  <%= f.button :submit %>
+<% end %>

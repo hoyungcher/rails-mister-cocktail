@@ -1,0 +1,8 @@
+<div class="card" style="width: 18rem;">
+  <img src="<%= cocktail.image_url %>" class="card-img-top" alt="...">
+  <div class="card-body" style="background-color:<%= ApplicationHelper::COCKTAIL_COLOURS[cocktail.colour.to_sym] %>;">
+    <h5 class="card-title"><%= cocktail.name %></h5>
+    <p class="card-text"><%= cocktail.description.split[0...20].join(' ') + "..."%></p>
+    <a href="cocktails/<%= cocktail.id %>" class="btn btn-primary">See more</a>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon ">
   <%= link_to "/cocktails", class: "navbar-brand" do %>
     <h3>The Cocktail Company</h3>
   <% end %>
@@ -9,10 +9,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%= link_to "Add a cocktail", "cocktails/new", class: "nav-link" %>
+        <%= link_to "Add a cocktail", "/cocktails/new", class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "Random cocktail", "#", class: "nav-link" %>
+        <%= link_to "Random cocktail", "/cocktails/1", class: "nav-link" %>
       </li>
     </ul>
   </div>

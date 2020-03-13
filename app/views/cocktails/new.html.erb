@@ -3,6 +3,6 @@
   <%= f.input :name %>
   <%= f.input :description, as: :text%>
   <%= f.input :colour, collection: [ "orange", "yellow", "green", "red", "blue"] %>
-  <%= f.input :image_url %>
+  <%= f.input :photo, as: :file %>
   <%= f.button :submit %>
 <% end %>

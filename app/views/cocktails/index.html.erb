@@ -4,7 +4,9 @@
 
 <div class="d-flex flex-wrap justify-content-between">
   <% @cocktails.each do |cocktail| %>
-    <%= render 'shared/card', cocktail: cocktail %>
+    <div class="col-6 col-md-4 p-0">
+      <%= render 'shared/card', cocktail: cocktail %>
+    </div>
   <% end %>
 </div>
 

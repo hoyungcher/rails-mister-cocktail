@@ -1,7 +1,7 @@
 <div class="card">
   <%= cl_image_tag cocktail.photo.key, :height=>400, :width=>600, :crop=>"lfill", class:"card-img-top1" %>
   <div class="card-body" style="height:auto;background-color:<%= ApplicationHelper::COCKTAIL_COLOURS[cocktail.colour.to_sym] %>;">
-    <h5 class="card-title"><%= cocktail.name %></h5>
+    <h4 class="card-title"><%= cocktail.name %></h4>
     <p class="card-text"><%= cocktail.description.split[0...20].join(' ') + "..."%></p>
     <a href="cocktails/<%= cocktail.id %>" class="btn btn-primary">See more</a>
   </div>

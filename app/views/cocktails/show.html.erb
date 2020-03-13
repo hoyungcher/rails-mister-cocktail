@@ -1,4 +1,29 @@
-<h1><%= @cocktail.name %></h1>
-<ul>
-
-</ul>
+<div class="cocktailbody" style="height:auto;background-color:<%= ApplicationHelper::COCKTAIL_COLOURS[@cocktail.colour.to_sym] %>;">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <div class="centralize">
+        <%= cl_image_tag @cocktail.photo.key, :height=>400, :width=>600, :crop=>"lfill", class:"cocktail-img" %>
+      </div>
+    </div>
+    <div class="col-10 col-md-8 mt-2">
+      <h1 id="cocktail-title"><%= @cocktail.name %></h1>
+    </div>
+    <div class="col-10 col-md-8">
+      <p><%= @cocktail.description %></p>
+    </div>
+    <div class="col-10 col-md-8">
+      <h2>Doses</h2>
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li><%= dose.description %> <%= dose.ingredient.name %></li>
+        <% end %>
+      </ul>
+      <h2>Add a dose to <%= @cocktail.name %></h2>
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.input :description %>
+        <%= f.association :ingredient %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+</div>

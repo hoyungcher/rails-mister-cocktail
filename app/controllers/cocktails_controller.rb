@@ -22,8 +22,8 @@ class CocktailsController < ApplicationController
   end
 
   def random
-    @cocktail_number = Cocktail.all.count
-    @cocktail = Cocktail.find((1..@cocktail_number).to_a.sample)
+    @cocktail_ids = Cocktail.all.ids
+    @cocktail = Cocktail.find(@cocktail_ids.sample)
     redirect_to cocktail_path(@cocktail)
 
   end
